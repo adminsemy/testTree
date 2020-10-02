@@ -59,7 +59,7 @@ function childComment(data, message, commentId) {
     $('.form-answer').hide();
     let card = $('#tempCard').clone(true);
     card.attr('id', data);
-    card.find('.card-text').text(someHtmlString).html(message);
+    card.find('.card-text').text(message).html();
     card.appendTo($(`#${commentId}`).children().filter(':last-child'));
     card.show();
 }
@@ -70,7 +70,8 @@ function parentComment(data, message) {
     $('.form-answer').hide();
     let card = $('#tempCard').clone(true);
     card.attr('id', data);
-    card.find('.card-text').text(someHtmlString).html(message);
+    card.find('.card-text').text(message).html();
+    console.log(data);
     card.appendTo('body');
     card.show();
 }
